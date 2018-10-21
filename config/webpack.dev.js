@@ -16,7 +16,7 @@ module.exports = merge.smart(webpackCommon, {
     overlay: true,
     contentBase: path.join(__dirname, "dist"),
     compress: true,
-    host: "0.0.0.0",
+    host: "localhost",
     port: 9097
   },
   devtool: "cheap-eval-source-map",

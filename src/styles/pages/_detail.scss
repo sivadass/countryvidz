@@ -1,0 +1,42 @@
+.video-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -16px;
+  .video-card-container {
+    flex-basis: 33.33333%;
+    padding: 0 16px;
+    margin-bottom: 32px;
+    .video-card-thumbnail {
+      margin-bottom: 16px;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    .video-card-meta {
+      h4 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+.video-player-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin-bottom: 32px;
+}
+.video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

@@ -57,7 +57,7 @@ const App = props => {
             <Header />
             <div className="main-wrapper">
               <Switch>
-                <Route path="/" component={Home} />
+                <Route exact path="/" component={Home} />
                 <Route path="/details/:country" component={Detail} />
                 <Route component={NoMatch} />
               </Switch>
