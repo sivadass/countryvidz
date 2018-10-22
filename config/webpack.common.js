@@ -55,7 +55,7 @@ module.exports = {
       chunkFilename: devMode ? "[id].css" : "[id].[hash].css"
     }),
     new webpack.DefinePlugin({
-      GOOGLE_API_KEY: JSON.stringify("AIzaSyAno8NdQQ1dudqiRF5qQJMfIdD7byFa2io")
+      GOOGLE_API_KEY: JSON.stringify("YOUR_GOOGLE_API_KEY_HERE")
     })
   ]
 };
