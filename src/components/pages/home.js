@@ -9,30 +9,24 @@ class Home extends React.Component {
       countries: []
     };
   }
+
   componentDidMount() {
     this.getCountries();
   }
+
   getCountries = () => {
     axios
       .get("https://restcountries.eu/rest/v2/all?fields=name;alpha2Code;latlng")
       .then(response => {
-        this.setState(
-          {
-            countries: response.data
-          },
-          () => {
-            console.log(this.state.countries);
-          }
-        );
+        this.setState({
+          countries: response.data
+        });
       })
       .catch(function(error) {
-        // handle error
         console.log(error);
-      })
-      .then(function() {
-        // always executed
       });
   };
+
   render() {
     return (
       <div className="container-fluid home">

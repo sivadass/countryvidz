@@ -55,7 +55,7 @@ module.exports = {
       chunkFilename: devMode ? "[id].css" : "[id].[hash].css"
     }),
     new webpack.DefinePlugin({
-      SERVICE_URL: JSON.stringify("http://localhost:3000/api")
+      GOOGLE_API_KEY: JSON.stringify("AIzaSyAno8NdQQ1dudqiRF5qQJMfIdD7byFa2io")
     })
   ]
 };

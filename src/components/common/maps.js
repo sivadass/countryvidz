@@ -1,16 +1,15 @@
 import React from "react";
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-import Loader from "../common/loader";
-import PinMarker from "./pin-marker";
+import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 
+import Loader from "../common/loader";
+
 class MapContainer extends React.Component {
   onMarkerClick = (props, marker, e) => {
-    console.log(props);
-    //e.preventDefault();
     this.props.history.push(`/details/${encodeURIComponent(props.name)}`);
   };
+
   render() {
     const { data } = this.props;
     if (data.length === 0) {
@@ -19,7 +18,11 @@ class MapContainer extends React.Component {
     return (
       <Map
         google={this.props.google}
-        zoom={3}
+        initialCenter={{
+          lat: 20,
+          lng: 77
+        }}
+        zoom={4}
         style={{
           width: "100%",
           height: "100%"
@@ -107,7 +110,7 @@ class MapContainer extends React.Component {
               icon={{
                 url:
                   "https://res.cloudinary.com/sivadass/image/upload/v1540032807/icons/map-pin.svg",
-                anchor: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 32),
                 scaledSize: new google.maps.Size(32, 32)
               }}
             />
@@ -124,9 +127,9 @@ MapContainer.propTypes = {
 
 const MapContainerWithRouter = withRouter(MapContainer);
 
-const LoadingContainer = props => <div>Fancy loading container!</div>;
+const LoadingContainer = props => <Loader />;
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyAno8NdQQ1dudqiRF5qQJMfIdD7byFa2io",
+  apiKey: GOOGLE_API_KEY,
   LoadingContainer: LoadingContainer
 })(MapContainerWithRouter);

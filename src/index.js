@@ -35,6 +35,13 @@ const Detail = props => (
     }
   </DynamicImport>
 );
+const Watch = props => (
+  <DynamicImport load={() => import("./components/pages/watch")}>
+    {Component =>
+      Component === null ? <PreLoader /> : <Component {...props} />
+    }
+  </DynamicImport>
+);
 
 const NoMatch = props => (
   <DynamicImport load={() => import("./components/pages/no-match")}>
@@ -58,7 +65,12 @@ const App = props => {
             <div className="main-wrapper">
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/details/:country" component={Detail} />
+                <Route exact path="/details/:country" component={Detail} />
+                <Route
+                  exact
+                  path="/details/:country/:videoID"
+                  component={Watch}
+                />
                 <Route component={NoMatch} />
               </Switch>
             </div>

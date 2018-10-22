@@ -54,7 +54,7 @@ export function logoutUser() {
       if (status === 204) {
         dispatch(logout());
       } else if (status == 400) {
-        console.log(data);
+        //console.log(data);
       }
     });
   };
