@@ -1,5 +1,5 @@
 {
-  "name": "countries-and-videos",
+  "name": "countryvidz",
   "version": "0.0.1",
   "description": "Countries and Videos using Google Maps API",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sivadass/countries-and-videos.git"
+    "url": "git+https://github.com/sivadass/countryvidz.git"
   },
   "author": "Sivadass N",
   "license": "MIT",
